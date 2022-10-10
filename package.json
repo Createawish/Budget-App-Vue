@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "element-ui": "^2.15.10",
+    "vue": "^2.6.10"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -26,18 +27,18 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/vue3-essential",
+      "plugin:vue/essential",
       "eslint:recommended"
     ],
     "parserOptions": {
       "parser": "@babel/eslint-parser"
     },
-    "rules": {}
+    "rules": {
+      "no-console": "off"
+    }
   },
   "browserslist": [
     "> 1%",
-    "last 2 versions",
-    "not dead",
-    "not ie 11"
+    "last 2 versions"
   ]
 }
