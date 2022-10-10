@@ -28,18 +28,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.budget-list-wrap{
+    max-width: 500px;
+    margin: auto;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+    .list-item{
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+    }
+    .budget-value{
+        font-weight: bold;
+        margin-left: auto;
+        margin-right: 20px;
+    }
 </style>
