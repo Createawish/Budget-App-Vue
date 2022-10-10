@@ -8,7 +8,7 @@
     <ElButton type="danger" size = 'mini'>Delete</ElButton>
 </div>
      </template>
-     <ElAlert v-else type="info" :title="emptyTitle"/>
+     <ElAlert v-else type="info" :title="emptyTitle" closable="false"/>
  </ElCard>
   </div>
 </template>
