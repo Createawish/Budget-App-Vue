@@ -1,5 +1,6 @@
 <template>
     <div id="app">
+        <FormInput/>
         <TotalBalance :total="totalBalance"/>
         <BudgetList :list="list" @deleteItem="onDeleteItem"/>
     </div>
@@ -8,12 +9,14 @@
 <script>
 import BudgetList from "@/components/BudgetList";
 import TotalBalance from "@/components/TotalBalans";
+import FormInput from "@/components/FormInput";
 
 export default {
   name: 'App',
   components: {
       TotalBalance,
       BudgetList,
+      FormInput,
   },
   data: () => ({
           list: {
