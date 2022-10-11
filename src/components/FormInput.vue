@@ -1,7 +1,7 @@
 
 <template>
 <ElCard class="form-data">
-    <ElForm :model="formData" :rules="rules">
+    <ElForm :model="formData" :rules="rules" label-position="left">
         <ElFormItem label="Type" prop="type">
             <ElSelect class="type-select" v-model="formData.type" placeholder="Choose type...">
                 <ElOption label="Income" value="income"/>
@@ -26,14 +26,17 @@ export default {
     name: 'FormInput',
     data: () => ({
         formData: {
-            type: 'income',
+            type: '',
             comments: '',
             value: 0
         },
         rules: {
-            type:[
-                {required: true, message: 'Please select type', trigger: 'change'}
-            ]
+            type:[{required: true, message: 'Please select type', trigger: 'blur'}],
+            comments: [{required: true, message: 'Please write comment', trigger: 'blur' }],
+            value: [
+                {required: true, message: 'Please input value', trigger: 'change'},
+                {type: 'number', message: 'Value must be a number', trigger: 'change'}
+                ]
         }
     }),
     methods:{
