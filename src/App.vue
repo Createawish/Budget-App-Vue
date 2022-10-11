@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <FormInput/>
+        <FormInput @submitForm="onFormSubmit"/>
         <TotalBalance :total="totalBalance"/>
         <BudgetList :list="list" @deleteItem="onDeleteItem"/>
     </div>
@@ -23,13 +23,13 @@ export default {
               1: {
                   type: 'income',
                   value: 100,
-                  comment: 'Some comment',
+                  comments: 'Some comment',
                   id: 1,
               },
               2: {
                   type: 'outcome',
                   value: -50,
-                  comment: 'Some outcome comment',
+                  comments: 'Some outcome comment',
                   id: 2,
               },
           }
@@ -42,7 +42,15 @@ export default {
     methods:{
       onDeleteItem(id){
           this.$delete(this.list,id)
-      }
+      },
+        onFormSubmit(data){
+          const newObj = {
+              ...data,
+              id: String(Math.random())
+          };
+          this.$set(this.list, newObj.id, newObj);
+        }
+
     }
 }
 </script>
